@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form id="publish">
+    <input type="text" name="message">
+    <input type="submit" value="Отправить">
+</form>
+
+<ul id="messages">
+
+</ul>
+
+<script>
+    publish.onsubmit = function() {
+        console.log(this.elements.message.value);
+        this.elements.message.value = "";
+        return false;
+    };
+
+    var li = document.createElement('li');
+    li.textContent = "123412";
+    messages.appendChild(li)
+</script>
+</body>
+</html>
