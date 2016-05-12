@@ -30,12 +30,14 @@
     function subscribe() {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "/subscribe", true);
-
+        xhr.onload = function() {
+            var li = document.createElement('li');
+            li.textContent = this.responseText;
+            messages.appendChild(li);
+            subscribe();
+        };
         xhr.send('');
     }
-    var li = document.createElement('li');
-    li.textContent = "123412";
-    messages.appendChild(li);
 </script>
 </body>
 </html>
