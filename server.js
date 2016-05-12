@@ -20,7 +20,10 @@ http.createServer(function(req, res) {
                         body = JSON.parse(body);
                         chat.publish(body.message);
                         res.end("ok");
-                    })
+                    });
+                break;
+            case '/subscribe':
+                chat.subscribe(res);
         }
     }
 ).listen(3000);
