@@ -17,6 +17,9 @@
 <script>
     publish.onsubmit = function() {
         console.log(this.elements.message.value);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/publish", true);
+        xhr.send(JSON.stringify({message: this.elements.message.value}));
         this.elements.message.value = "";
         return false;
     };
