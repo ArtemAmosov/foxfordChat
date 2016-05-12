@@ -2,6 +2,10 @@ clients = [];
 
 exports.publish = function(message) {
     console.log("publish %s", message);
+    clients.forEach(function(res) {
+        res.end(message);
+    });
+    clients = [];
 };
 
 exports.subscribe = function(res) {
